@@ -5,7 +5,7 @@ services:
     build: .
     container_name: logmonitor
     volumes:
-      - /home/acintyo/b2b/logs:/home/acintyo/b2b/logs
+      - /home/work/b2b/logs:/home/work/b2b/logs
     expose:
       - "6000"
     environment:
