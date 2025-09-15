@@ -1,5 +1,5 @@
 LOG_DIRS = {
-    "b2b": "/home/acintyo/b2b/logs",
+    "b2b": "/home/work/b2b/logs",
 }
 
 RECIPIENTS = [ "dev1@gmail.com", "dev2@gmail.com"]
