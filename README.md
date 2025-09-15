@@ -38,12 +38,12 @@ docker logs -f logmonitor
 
 ## 🧪 Local Development (Without Docker)
 1. Install Requirements
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+* python3 -m venv venv
+* source venv/bin/activate
+* pip install -r requirements.txt
 
 2. Start the Server
-uvicorn app.main:app --reload --port 6000
+* uvicorn app.main:app --reload --port 6000
 
 ## 🧹 Clean Up
 To stop and remove containers:
