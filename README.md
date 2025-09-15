@@ -22,10 +22,10 @@ Use an App Password for Gmail accounts.
 
 ## 🐳 Docker Setup
 1. Build & Run the Container
-   docker-compose up --build -d
+* docker-compose up --build -d
 
 2. Confirm it's Running
-   docker logs -f logmonitor
+* docker logs -f logmonitor
 
 ## 🔄 How It Works
 1. Every 10 minutes:
@@ -38,13 +38,13 @@ Use an App Password for Gmail accounts.
 
 ## 🧪 Local Development (Without Docker)
 1. Install Requirements
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
+* python3 -m venv venv
+* source venv/bin/activate
+* pip install -r requirements.txt
 
 2. Start the Server
-   uvicorn app.main:app --reload --port 6000
+* uvicorn app.main:app --reload --port 6000
 
 ## 🧹 Clean Up
 To stop and remove containers:
-   docker-compose down
+* docker-compose down
