@@ -11,22 +11,6 @@ Ideal for tracking issues in microservices, NGINX logs, or any custom app logs �
 - 🐳 Dockerized for easy deployment
 - ⚡ Built with Python 3.11 + FastAPI
 
-## 🧱 Project Structure
-├── app/
-│ ├── config.py # Configuration: log paths, recipients, intervals
-│ ├── mailer.py # SMTP email sending logic
-│ ├── monitor.py # Log scanning & caching logic
-│ └── main.py # FastAPI app with background thread
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-├── cache.json # Cache file to track last sent timestamps
-└── README.md
-
-LOG_DIRS: Dictionary of project names and log folder paths
-RECIPIENTS: List of email recipients
-SEND_INTERVAL_SECONDS: How often to scan logs and send summary
-
 ## 📧 SMTP Setup
 Update these values in app/mailer.py:
 * SMTP_SERVER = "smtp.gmail.com"
