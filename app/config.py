@@ -2,6 +2,8 @@ LOG_DIRS = {
     "b2b": "/home/work/b2b/logs",
 }
 
-RECIPIENTS = [ "dev1@gmail.com", "dev2@gmail.com"]
 SEND_INTERVAL_SECONDS = 600  # 10 minutes
+SLACK_BOT_TOKEN = "xoxb-1234567890976543-123456789987654-RrEM33qqQ8ghRxhOAukFA0F3"
+SLACK_CHANNEL_ID = "C093ASDFG123"
+
 
