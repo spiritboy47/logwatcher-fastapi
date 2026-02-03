@@ -1,15 +1,15 @@
+#monitor.py
+
 import os
 import time
 import json
 import re
 from datetime import datetime
-from app.mailer import send_summary_email
-from app.config import LOG_DIRS, RECIPIENTS, SEND_INTERVAL_SECONDS
+from app.notifier import send_slack_summary
+from app.config import LOG_DIRS, SEND_INTERVAL_SECONDS
 
-# Cache file to store last sent timestamp per log file
 CACHE_FILE = os.path.join(os.path.dirname(__file__), "cache.json")
 
-# Regex to extract ISO 8601 timestamps
 TIMESTAMP_REGEX = re.compile(r"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d+([+-]\d{2}:\d{2})?)")
 
 def parse_timestamp(line: str) -> datetime | None:
@@ -73,7 +73,6 @@ def start_monitoring():
                                 latest_ts = ts
                                 latest_line = line.strip()
 
-                    # Only consider if we found a new line
                     if latest_ts and latest_line:
                         prev_sent_ts_str = cache.get(cache_key)
                         prev_sent_ts = datetime.fromisoformat(prev_sent_ts_str) if prev_sent_ts_str else None
@@ -86,7 +85,7 @@ def start_monitoring():
                     print(f"[ERROR] Failed to read {filepath}: {e}")
 
             if error_summary:
-                send_summary_email(project, error_summary, RECIPIENTS)
+                send_slack_summary(project, error_summary)
 
         save_cache(cache)
         print(f"[INFO] Monitoring paused for {SEND_INTERVAL_SECONDS} seconds...\n")
